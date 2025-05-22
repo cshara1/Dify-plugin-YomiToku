@@ -1,0 +1,198 @@
+identity:
+  name: yomitoku
+  author: cshara
+  label:
+    en_US: yomitoku
+    zh_Hans: yomitoku
+    pt_BR: yomitoku
+description:
+  human:
+    en_US: unofficial plugin for yomitoku
+    zh_Hans: unofficial plugin for yomitoku
+    pt_BR: unofficial plugin for yomitoku
+  llm: unofficial plugin for yomitoku
+parameters:
+  - name: file
+    type: file
+    required: true
+    label:
+      en_US: file
+      zh_Hans: file
+      ja_JP: file
+    human_description:
+      en_US:  the file to be parsed(support pdf, png, jpg, jpeg)
+      zh_Hans: 用于解析的文件(支持 pdf, png, jpg, jpeg)
+      ja_JP: 解析するファイル(pdf、png、jpg、jpegをサポート)
+    llm_description: the file to be parsed (support pdf, png, jpg, jpeg)
+    form: llm
+  - name: output_format
+    type: select
+    required: false
+    default: json
+    label:
+      en_US: output format
+      zh_Hans: 输出格式
+      ja_JP: 出力形式
+    human_description:
+      en_US: Specify the file format for the output (supports json, csv, html, md).
+      zh_Hans: 指定输出文件的格式（支持 json, csv, html, md）。
+      ja_JP: 出力形式のファイルフォーマットを指定します。(json, csv, html, md をサポート)
+    llm_description: Output format, can be json, csv, html or markdown. Default is json. 
+    form: form
+    options:
+      - value: json
+        label:
+          en_US: json
+          zh_Hans: json
+          ja_JP: json
+      - value: csv
+        label:
+          en_US: csv
+          zh_Hans: csv
+          ja_JP: csv
+      - value: html
+        label:
+          en_US: html
+          zh_Hans: html
+          ja_JP: html
+      - value: markdown
+        label:
+          en_US: markdown
+          zh_Hans: markdown
+          ja_JP: markdown
+    placeholder:
+      en_US: Please select output format
+      zh_Hans: 请选择输出格式
+      ja_JP: 出力形式を選択してください
+  - name: reading_order
+    type: select
+    required: false
+    default: auto
+    label:
+      en_US: reading_order
+      zh_Hans: reading_order
+      ja_JP: reading_order
+    human_description:
+      ja_JP: 読み取り順序を指定します。(auto, left2right, top2bottom, right2left をサポート)
+      en_US: Specify the reading order. (supports auto, left2right, top2bottom, right2left)
+      zh_Hans: 指定阅读顺序。(支持 auto, left2right, top2bottom, right2left)
+    llm_description: Output format, can be json, csv, html or markdown. Default is json. 
+    form: form
+    options:
+      - value: auto
+        label:
+          en_US: auto
+          zh_Hans: auto
+          ja_JP: auto
+      - value: left2right
+        label:
+          en_US: left2right
+          zh_Hans: left2right
+          ja_JP: left2right
+      - value: top2bottom
+        label:
+          en_US: top2bottom
+          zh_Hans: top2bottom
+          ja_JP: top2bottom
+      - value: right2left
+        label:
+          en_US: right2left
+          zh_Hans: right2left
+          ja_JP: right2left
+    placeholder:
+      en_US: Please select reading order
+      zh_Hans: 请选择阅读顺序
+      ja_JP: 読み取り順序を選択してください
+  - name: lite
+    type: boolean
+    required: false
+    default: false
+    label:
+      en_US: lite
+      zh_Hans: lite
+      ja_JP: lite
+    human_description:
+      ja_JP: 軽量モデルで推論を実行します。通常より高速に推論できますが、若干、精度が低下する可能性があります。
+      en_US: Run inference with lite model. It can be faster than normal model, but the accuracy may be slightly lower.
+      zh_Hans: 使用精简版模型进行推理。它比普通模型快，但准确性可能稍低。
+    llm_description: Run inference with lite model. It can be faster than normal model, but the accuracy may be slightly lower.
+    form: form
+  - name: ignore_line_break
+    type: boolean
+    required: false
+    default: false
+    label:
+      en_US: ignore line break
+      zh_Hans: ignore line break
+      ja_JP: ignore line break
+    human_description:
+      en_US: Ignore line break when parsing the file.
+      zh_Hans: 解析文件时忽略换行。
+      ja_JP: ファイルを解析するときに改行を無視します。
+    llm_description: Ignore line break when parsing the file.
+    form: form
+  - name: figure_letter
+    type: boolean
+    required: false
+    default: false
+    label:
+      en_US: figure letter
+      zh_Hans: figure letter
+      ja_JP: figure letter
+    human_description:
+      ja_JP: 検出した図表に含まれる文字も出力ファイルにエクスポートします。
+      en_US: Export the characters contained in the detected figure to the output file.
+      zh_Hans: 将检测到的图形中包含的字符导出到输出文件。
+    llm_description: Export the characters contained in the detected figure to the output file.
+    form: form
+  - name: ignore_meta
+    type: boolean
+    required: false
+    default: false
+    label:
+      en_US: ignore meta
+      zh_Hans: ignore meta
+      ja_JP: ignore meta
+    human_description:
+      ja_JP: 文章のheater, fotterなどの文字情報を出力ファイルに含めません。
+      en_US: Do not include the text information of the article's heater, fotter, etc. in the output file.
+      zh_Hans: 不包括文章的页眉、页脚等文字信息在输出文件中。
+    llm_description: Do not include the text information of the article's heater, fotter, etc. in the output file.
+    form: form
+  - name: device
+    type: select
+    required: false
+    default: cpu
+    label:
+      en_US: device
+      zh_Hans: device
+      ja_JP: device
+    human_description:
+      en_US: Specify the device to run the model on. (supports auto, cpu, cuda)
+      zh_Hans: 指定运行模型的设备。(支持 auto, cpu, cuda)
+      ja_JP: モデルを実行するデバイスを指定します。(auto, cpu, cuda をサポート)
+    llm_description: Specify the device to run the model on. (supports auto, cpu, cuda)
+    form: form
+    options:
+      - value: cpu
+        label:
+          en_US: cpu
+          zh_Hans: cpu
+          ja_JP: cpu
+      - value: cuda
+        label:
+          en_US: cuda
+          zh_Hans: cuda
+          ja_JP: cuda
+      - value: auto
+        label:
+          en_US: auto
+          zh_Hans: auto
+          ja_JP: auto
+    placeholder:
+      en_US: Please select device
+      zh_Hans: 请选择设备
+      ja_JP: デバイスを選択してください
+extra:
+  python:
+    source: tools/difyplugin_yomitoku.py

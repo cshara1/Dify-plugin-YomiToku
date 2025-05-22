@@ -1,0 +1,17 @@
+identity:
+  author: cshara
+  name: yomitoku
+  label:
+    en_US: yomitoku
+    zh_Hans: yomitoku
+    pt_BR: yomitoku
+  description:
+    en_US: unofficial plugin for yomitoku
+    zh_Hans: unofficial plugin for yomitoku
+    pt_BR: unofficial plugin for yomitoku
+  icon: icon.svg
+tools:
+  - tools/difyplugin_yomitoku.yaml
+extra:
+  python:
+    source: provider/difyplugin_yomitoku.py

@@ -1,0 +1,53 @@
+version: 0.0.1
+type: plugin
+author: cshara
+name: yomitoku
+label:
+  en_US: yomitoku
+  ja_JP: yomitoku
+  zh_Hans: yomitoku
+  pt_BR: yomitoku
+description:
+  en_US: unofficial plugin for yomitoku
+  ja_JP: unofficial plugin for yomitoku
+  zh_Hans: unofficial plugin for yomitoku
+  pt_BR: unofficial plugin for yomitoku
+icon: icon.svg
+resource:
+  memory: 1073741824
+  permission:
+    tool:
+      enabled: true
+    model:
+      enabled: false
+      llm: false
+      text_embedding: false
+      rerank: false
+      tts: false
+      speech2text: false
+      moderation: false
+    node:
+      enabled: false
+    endpoint:
+      enabled: false
+    app:
+      enabled: true
+    storage:
+      enabled: true
+      size: 1048576
+plugins:
+  tools:
+    - provider/difyplugin_yomitoku.yaml
+meta:
+  version: 0.0.1
+  arch:
+    - amd64
+    - arm64
+  runner:
+    language: python
+    version: "3.12"
+    entrypoint: main
+  minimum_dify_version: 1.0.0
+created_at: 2025-05-19T19:13:44.011024+09:00
+privacy: PRIVACY.md
+verified: false
