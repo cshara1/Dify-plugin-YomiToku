@@ -1,7 +1,7 @@
 ## difyplugin_yomitoku
 
 ### Description
-日本語特化OCR「[YomiToku](https://github.com/kotaro-kinoshita/yomitoku)」のDifyプラグイン
+日本語特化OCR「[YomiToku](https://github.com/kotaro-kinoshita/yomitoku)」のDifyプラグイン  
 Unofficial Dify plugin for YomiToku, japanese ocr.
 
 ### 本プロジェクトの目標
